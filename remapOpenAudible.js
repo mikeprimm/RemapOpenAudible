@@ -44,7 +44,7 @@ for (let i = 0; i < book_data.length; i++) {
         console.error(`Error creating path ${destpath}:`, err);
         process.exit(1);
     }    
-    let files = fs.readdirSync(books_dir).filter(fn => fn.startsWith(rec.filename));
+    let files = fs.readdirSync(books_dir).filter(fn => fn.startsWith(rec.filename + '.'));
     for (let file of files) {
         let srcfile = path.join(books_dir, file);
         let tmpfile = path.join(destpath, "tmp.bin");
